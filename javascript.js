@@ -43,4 +43,18 @@ function handleSelection(sender, args)
 		sender.currentView = p.CalendarView.Timetable;
 	}
 }
+function load() {
+	var mydata = JSON.parse(data);
+	if(sender.currentView === p.CalendarView.Timetable)
+	{
+		
+		alert(mydata[0].roomName);
+		alert(mydata[0].capacity);
+		alert(mydata[0].availableFrom);
+		alert(mydata[0].availableTo);
+		alert(mydata[0].schedule);
+		sender.mydata[0].availableFrom = sender.timetableSettings.dates.items()[0];
+		sender.currentView = p.CalendarView.SingleMonth;
+	}
+}
 
